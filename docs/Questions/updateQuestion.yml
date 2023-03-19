@@ -1,0 +1,36 @@
+/api/v1/questions/updateQuestion/14:
+  put:
+    tags:
+      - Question
+    description: Actualizar preguntas
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              question:
+                type: string
+          example:
+            {
+                "question": "¿que dia es hoy?"
+            }
+
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                message:
+                  type: string
+                  description: Mensaje de respuesta 
+            example:
+              {
+                  "state": true,
+                  "message": "Pregunta Editada con exito"
+              }

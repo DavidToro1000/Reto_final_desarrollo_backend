@@ -1,0 +1,40 @@
+/api/v1/user/update/123456789:
+  put:
+    tags:
+      - User
+    description: Actualizar usuarios
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/definitions/User'
+          example:
+            {
+                "firstName": "danielEditado",
+                "secondName": "jose",
+                "surname": "cruz",
+                "secondSurName": "casallas",
+                "typeDocument": 1,
+                "documentNumber": 123456789,
+                "email": "danielc88@gmail.co",
+                "phone": "32123122314",
+            }
+
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                message:
+                  type: string
+                  description: Mensaje de respuesta 
+            example:
+              {
+                  "state": true,
+                  "message": "Se actualizo correctamente"
+              }

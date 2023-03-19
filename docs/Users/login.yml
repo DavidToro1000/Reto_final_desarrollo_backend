@@ -1,0 +1,47 @@
+/api/v1/login:
+  post:
+    tags:
+      - User
+    description: Logear usuarios
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              email:
+                type: string
+              password:
+                type: string
+          example:
+            {
+                "email": "danielc88@gmail.co",
+                "password": "32jdkdi"
+            }
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                id:
+                  type: number
+                name:
+                  type: string
+                role:
+                  type: string
+                message:
+                  type: string
+                  description: Mensaje de respuesta 
+            example:
+              {
+                  "state": true,
+                  "id": 1,
+                  "name": "jose daniel cruz casallas",
+                  "role": "estudiante",
+                  "message": "Ingreso exitoso"
+              }

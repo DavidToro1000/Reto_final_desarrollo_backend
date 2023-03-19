@@ -1,0 +1,38 @@
+/api/v1/questions/updateAnswer/2:
+  put:
+    tags:
+      - Answer
+    description: Actualizar respuestas
+    requestBody:
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              opcion:
+                type: string
+              iscorrect:
+                type: boolean
+          example:
+            {
+                "opcion": "correcta",
+                "iscorrect":true
+            }
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                message:
+                  type: string
+                  description: Mensaje de respuesta 
+            example:
+              {
+                  "state": true,
+                  "message": "opcion Editada con exito"
+              }

@@ -1,0 +1,43 @@
+/api/v1/user/create:
+  post:
+    tags:
+      - User
+    description: Registrar usuarios
+    requestBody:
+      content:
+        application/json:
+          schema:
+            $ref: '#/definitions/User1'
+          example:
+            {
+                "firstName": "daniel",
+                "secondName": "jose",
+                "surname": "cruz",
+                "secondSurName": "casallas",
+                "typeDocument": 1,
+                "documentNumber": 123456789,
+                "email": "danielc88@gmail.co",
+                "password":"32jdkdi",
+                "rol":2, 
+                "phone": "32123122314",
+            }
+
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                message:
+                  type: string
+                  description: Mensaje de respuesta 
+            example:
+              {
+                  "state": true,
+                  "message": "Estudiante creado correctamente"
+              }
+

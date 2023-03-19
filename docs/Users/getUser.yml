@@ -1,0 +1,27 @@
+/api/v1/user/getUser/123456789:
+  get:
+    tags:
+      - User
+    description: obtener Usuarios
+    produces:
+      - application/json
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              items:
+                $ref: '#/definitions/User'              
+            example:
+              {
+                  "firstName": "daniel",
+                  "secondName": "jose",
+                  "surname": "cruz",
+                  "secondSurName": "casallas",
+                  "typeDocument": 1,
+                  "documentNumber": 123456789,
+                  "email": "danielc88@gmail.co,",
+                  "phone": "32123122314"
+              }

@@ -1,0 +1,68 @@
+/api/v1/form/getquestions:
+  get:
+    tags:
+      - Form
+    description: Listar preguntas del formulario
+    produces:
+      - application/json
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: boolean
+                questions:
+                  type: object
+                  properties:
+                    question:
+                      type: string
+                    id:
+                      type: number
+                    options:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        option:
+                          type: string            
+            example:
+              {
+                  "state": true,
+                  "questions": [{
+                      "question": "¿que dia es hoy?",
+                      "id": 12,
+                      "options": [{
+                          "id": 1,
+                          "option": "lunes",
+                      }, {
+                          "id": 2,
+                          "option": "martes",
+                      }, {
+                          "id": 3,
+                          "option": "miercoles",
+                      }, {
+                          "id": 4,
+                          "option": "jueves",
+                      }]
+                  }, {
+                      "question": "¿que hora es?",
+                      "id": "12",
+                      "options": [{
+                          "id": 1,
+                          "option": "14:00",
+                      }, {
+                          "id": 2,
+                          "option": "20:00",
+                      }, {
+                          "id": 3,
+                          "option": "21:00",
+                      }, {
+                          "id": 4,
+                          "option": "00:00",
+                      }]
+                  }]
+              }

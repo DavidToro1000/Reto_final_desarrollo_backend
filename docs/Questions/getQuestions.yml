@@ -1,0 +1,27 @@
+/api/v1/questions/getQuestions:
+  get:
+    tags:
+      - Question
+    description: Listar Preguntas
+    produces:
+      - application/json
+    responses:
+      200:
+        description: Petición exitosa
+        content:
+          application/json:
+            schema:
+              type: object
+              items:
+                $ref: '#/definitions/Question'              
+            example:
+              {
+                  "state": true,
+                  "questions": [{
+                      "question": "¿que dia es hoy?",
+                      "id": "12"
+                  }, {
+                      "question": "¿que dia es hoy?",
+                      "id": "12"
+                  }]
+              }
